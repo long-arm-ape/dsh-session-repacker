@@ -1,0 +1,4 @@
+# dsh-session-repacker bundle：挂载服务端维护插件。
+- insert:
+    - id: session-repacker
+      name: 'dsh-session-repacker'

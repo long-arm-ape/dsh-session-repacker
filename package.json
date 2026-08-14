@@ -1,0 +1,28 @@
+{
+  "name": "dsh-session-repacker",
+  "description": "会话日志 zstd 帧重打包：把逐批写入的成千上万个独立 zstd 帧合并为官方标准形态（头部帧 + 单事件帧），大幅降低旧会话打开时的解压开销；后台自动维护 + 独立 CLI 一键执行。",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.mjs",
+  "exports": {
+    ".": {
+      "default": "./lib/index.mjs"
+    },
+    "./repack": "./tools/repack.mjs",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "build": "tsdown --config ./tsdown.config.ts"
+  },
+  "devDependencies": {
+    "tsdown": "0.22.2"
+  },
+  "license": "MIT"
+}
